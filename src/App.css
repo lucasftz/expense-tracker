@@ -186,6 +186,8 @@ h1:after {
   width: 200px;
   height: 200px;
   border-radius: 15px;
+  text-align: center;
+  overflow-y: scroll;
 }
 
 .green {
@@ -194,4 +196,25 @@ h1:after {
 
 .red {
   color: var(--red);
+}
+
+.lookup {
+  background-color: var(--primary);
+  color: var(--desc-color);
+  outline: none;
+  border-width: 0;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.currencies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2px;
+}
+
+.currencies-grid button {
+  background-color: var(--secondary);
 }
