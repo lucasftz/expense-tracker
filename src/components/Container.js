@@ -3,9 +3,9 @@ import TitleBar from './titlebar/TitleBar';
 // icons
 import { FaPlus } from 'react-icons/fa';
 
-const EarningsContainer = () => {
+const EarningsContainer = ({ type }) => {
   return <>
-    <TitleBar />
+    <TitleBar type={type} />
 
     <div className="container">
       <button><FaPlus /></button>
