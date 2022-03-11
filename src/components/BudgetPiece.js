@@ -33,15 +33,17 @@ const BudgetPiece = ({ type, expense, expenses, setExpenses, removeExpense }) =>
   return (
     // class of income-source or expenses-source
     <div className={`${type}-source`}>
-      <input
-        placeholder="$0"
-        value={expense.value}
-        onChange={handleValueChange}
-        className="expense" />
-      <input
-        placeholder="Description"
-        value={expense.desc}
-        onChange={handleDescChange} />
+      <div className="inputs">
+        <input
+          placeholder="$0"
+          value={expense.value}
+          onChange={handleValueChange}
+          className="expense" />
+        <input
+          placeholder="Description"
+          value={expense.desc}
+          onChange={handleDescChange} />
+      </div>
       <button onClick={() => removeExpense(expense.id)}>
         <HiOutlineTrash />
       </button>

@@ -29,7 +29,8 @@ h1:after {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
   background-color: #D9D375;
   margin-left: 5%;
   margin-right: 5%;
@@ -37,7 +38,13 @@ h1:after {
   border-radius: 15px;
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1300px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
   }
@@ -73,6 +80,11 @@ h1:after {
   color: rgb(58, 58, 58);
 }
 
+.income-source .inputs {
+  display: flex;
+  flex-direction: column;
+}
+
 .income-source input.expense, .expenses-source input.expense,
 .income-source input.expense::placeholder, .expenses-source input.expense::placeholder {
   color: rgb(58, 58, 58);
@@ -84,6 +96,20 @@ h1:after {
   border-width: 0;
   color: rgb(114, 114, 114);
   outline: none;
+}
+
+.income-source button, .expenses-source button {
+  width: fit-content;
+  height: fit-content;
+  padding: 1em;
+  font-size: x-large;
+  background-color: transparent;
+  float: right;
+  vertical-align: middle;
+}
+
+.income-source button:hover, .expenses-source button:hover {
+  background-color: #D5B942;
 }
 
 .income-source {
