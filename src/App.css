@@ -128,3 +128,21 @@ h1:after {
 .expenses-source {
   box-shadow: 7px 0 var(--red);
 }
+
+.display {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.display h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.green {
+  color: var(--green);
+}
+
+.red {
+  color: var(--red);
+}
