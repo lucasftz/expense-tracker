@@ -1,8 +1,18 @@
+:root {
+  --text-color: rgb(58, 58, 58);
+  --desc-color: rgb(58, 58, 58);
+  --primary: #E3DE8F;
+  --secondary: #D9D375;
+  --tertiary: #D5B942;
+  --green: #5DBB63;
+  --red: #9B111E;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #E3DE8F;
-  color: rgb(58, 58, 58);
+  background-color: var(--primary);
+  color: var(--text-color);
 }
 
 h1 {
@@ -31,7 +41,7 @@ h1:after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1em;
-  background-color: #D9D375;
+  background-color: var(--secondary);
   margin-left: 5%;
   margin-right: 5%;
   padding: 2em;
@@ -59,7 +69,7 @@ h1:after {
   align-self: center;
   vertical-align: middle;
   line-height: 0;
-  background-color: #D5B942;
+  background-color: var(--tertiary);
   color: rgb(58, 58, 58);
   transition-duration: 0.25s;
   border-radius: 15%;
@@ -67,14 +77,14 @@ h1:after {
   cursor: pointer;
 }
 .container button:hover {
-  background-color: #E3DE8F;
+  background-color: var(--primary);
 }
 
 .income-source, .expenses-source {
   margin: 1%;
   padding: 1em;
   line-height: 0;
-  background-color: #E3DE8F;
+  background-color: var(--primary);
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   color: rgb(58, 58, 58);
@@ -87,14 +97,14 @@ h1:after {
 
 .income-source input.expense, .expenses-source input.expense,
 .income-source input.expense::placeholder, .expenses-source input.expense::placeholder {
-  color: rgb(58, 58, 58);
+  color: var(--text-color);
   font-size: 32px;
 }
 
 .income-source input, .expenses-source input {
-  background-color: #E3DE8F;
+  background-color: var(--primary);
   border-width: 0;
-  color: rgb(114, 114, 114);
+  color: var(--desc-color);
   outline: none;
 }
 
@@ -109,12 +119,12 @@ h1:after {
 }
 
 .income-source button:hover, .expenses-source button:hover {
-  background-color: #D5B942;
+  background-color: var(--tertiary);
 }
 
 .income-source {
-  box-shadow: 7px 0 #5DBB63;
+  box-shadow: 7px 0 var(--green);
 }
 .expenses-source {
-  box-shadow: 7px 0 #9B111E;
+  box-shadow: 7px 0 var(--red);
 }
