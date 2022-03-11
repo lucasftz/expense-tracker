@@ -139,6 +139,55 @@ h1:after {
   text-align: center;
 }
 
+.currency-switch-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+}
+
+.currency-switch {
+  background-color: var(--secondary);
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  width: fit-content;
+  height: 5%;
+  font-size: 15px;
+  text-align: center;
+  border-top-left-radius: 15px;
+}
+
+.currency-switch-container h3 {
+  margin: 0;
+}
+
+.currency-switch-container button {
+  background-color: transparent;
+  padding: 0.5em;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+  border-width: 0;
+  cursor: pointer;
+  transition-duration: 0.25s;
+}
+
+.currency-switch-container button:hover {
+  background-color: var(--tertiary);
+}
+
+.currency-selector {
+  background-color: var(--tertiary);
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+}
+
 .green {
   color: var(--green);
 }

@@ -3,6 +3,7 @@ import './App.css';
 // components
 import Container from './components/Container';
 import Display from './components/Display';
+import CurrencySelector from './components/CurrencySelector';
 // contexts
 import { currencyContext } from './contexts/CurrencyContext';
 
@@ -11,6 +12,7 @@ function App() {
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpenses, setTotalExpenses] = useState(0);
   const [currency, setCurrency] = useState('$');
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setBudget(totalIncome - totalExpenses);
@@ -22,6 +24,13 @@ function App() {
 
       <Container type="income" setTotal={setTotalIncome} />
       <Container type="expenses" setTotal={setTotalExpenses} />
+
+      <div className="currency-switch-container">
+        <div className="currency-switch">
+          <h3>Currency: <button onMouseOver={() => setShowModal(true)}>{currency}</button></h3>
+        </div>
+        {showModal && <CurrencySelector setShowModal={setShowModal} />}
+      </div>
     </div>
   </currencyContext.Provider>;
 }
