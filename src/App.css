@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #E3DE8F;
+  color: rgb(58, 58, 58)
+}
+
+h1 {
+  margin-left: 10%;
+  width: 80%;
+  overflow: hidden;
+  text-align: center;
+}
+h1:before, h1:after {
+  content: "";
+  display: inline-block;
+  width: 50%;
+  margin: 0 .5em 0 -55%;
+  vertical-align: middle;
+  border-bottom: 1px solid;
+}
+h1:before {
+  width: 20%;
+}
+h1:after {
+  margin: 0 -55% 0 .5em;
+  width: 80%;
+}
