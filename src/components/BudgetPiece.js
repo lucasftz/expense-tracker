@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+// contexts
+import { currencyContext } from '../contexts/CurrencyContext';
 // icons
 import { HiOutlineTrash } from 'react-icons/hi';
 
 const BudgetPiece = ({ type, expense, expenses, setExpenses, removeExpense }) => {
+  const {currency} = useContext(currencyContext);
+
   const handleDescChange = (e) => {
     // get a copy of this expense
     const expenseCopy = {...expense};
@@ -15,16 +19,16 @@ const BudgetPiece = ({ type, expense, expenses, setExpenses, removeExpense }) =>
   const handleValueChange = (e) => {
     // find last character
     let lastChar = e.target.value.charAt(e.target.value.length-1);
-    if (lastChar==='$' && e.target.value.length===1) lastChar=0
+    if (lastChar===currency && e.target.value.length===1) lastChar=0
     // if last char is not numeric, do nothing (don't prepend it to desc)
-    // prev line is to change the initial $ to a numeric char if it's the only char
+    // prev line is to change the initial currency symbol to a numeric char if it's the only char
     if (isNaN(+lastChar)) return;
     // get a copy of this expense
     const expenseCopy = {...expense};
     // add what was typed to the copy
     expenseCopy.value = e.target.value;
-    // if there is no initial '$', prepend it
-    if (expenseCopy.value[0] !== '$') expenseCopy.value = '$' + expenseCopy.value;
+    // if there is no initial currency symbol, prepend it
+    if (expenseCopy.value[0] !== currency) expenseCopy.value = currency + expenseCopy.value;
     // if there is only one char (which will be '$', delete it)
     if (expenseCopy.value.length === 1) expenseCopy.value = "";
     setExpenses(expenses.map(exp => exp.id === expense.id ? expenseCopy : exp));
