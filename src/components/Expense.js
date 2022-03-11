@@ -4,7 +4,7 @@ import { currencyContext } from '../contexts/CurrencyContext';
 // icons
 import { HiOutlineTrash } from 'react-icons/hi';
 
-const BudgetPiece = ({ type, expense, expenses, setExpenses, removeExpense }) => {
+const Expense = ({ type, expense, expenses, setExpenses, removeExpense }) => {
   const {currency} = useContext(currencyContext);
 
   const handleDescChange = (e) => {
@@ -55,4 +55,4 @@ const BudgetPiece = ({ type, expense, expenses, setExpenses, removeExpense }) =>
   );
 };
 
-export default BudgetPiece
+export default Expense

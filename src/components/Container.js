@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // componenets
 import TitleBar from './titlebar/TitleBar';
-import BudgetPiece from './BudgetPiece';
+import Expense from './Expense';
 // icons
 import { FaPlus } from 'react-icons/fa';
 
@@ -31,7 +31,7 @@ const EarningsContainer = ({ type, setTotal }) => {
 
       <div className="container">
         {expenses.map(expense => {
-          return <BudgetPiece
+          return <Expense
                   key={expense.id}
                   type={type}
                   expense={expense}
