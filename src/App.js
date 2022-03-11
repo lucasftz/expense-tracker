@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 // components
 import Container from './components/Container';
 
 function App() {
-  const [incomeSources, setIncomeSources] = useState([]);
-  const [expenses, setExpenses] = useState([]);
-
   return (
     <div className="App">
-      <Container type="income" sources={incomeSources} setSources={setIncomeSources} />
-      <Container type="expenses" sources={expenses} setSources={setExpenses} />
+      <Container type="income" />
+      <Container type="expenses" />
     </div>
   );
 }

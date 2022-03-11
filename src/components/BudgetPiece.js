@@ -1,20 +1,20 @@
 import React from 'react';
 
-const BudgetPiece = ({ type, source, sources, setSources }) => {
+const BudgetPiece = ({ type, expense, expenses, setExpenses }) => {
   const handleChange = (e) => {
     // get a copy of this source
-    const sourceCopy = {...source};
+    const expenseCopy = {...expense};
     // add what was typed to the copy
-    sourceCopy.desc = e.target.value;
+    expenseCopy.desc = e.target.value;
     // replace the original source with the copy
-    setSources(sources.map(s => s.id === source.id ? sourceCopy : s));
+    setExpenses(expenses.map(exp => exp.id === expense.id ? expenseCopy : exp));
   };
 
   return (
     // class of income-source or expenses-source
     <div className={`${type}-source`}>
-      <h2>{source.value}</h2>
-      <input value={source.desc} onChange={handleChange} />
+      <h2>{expense.value}</h2>
+      <input value={expense.desc} onChange={handleChange} />
     </div>
   );
 };

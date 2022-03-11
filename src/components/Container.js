@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 // componenets
 import TitleBar from './titlebar/TitleBar';
 import BudgetPiece from './BudgetPiece';
 // icons
 import { FaPlus } from 'react-icons/fa';
 
-const EarningsContainer = ({ type, sources, setSources }) => {
-  const addSource = () => {
-    setSources([...sources, {desc: "", value: 0, id: new Date().getTime()}]);
+const EarningsContainer = ({ type }) => {
+  const [expenses, setExpenses] = useState([]);
+
+  const addExpense = () => {
+    setExpenses([...expenses, {desc: "", value: 0, id: new Date().getTime()}]);
   };
 
   return (
@@ -15,16 +17,16 @@ const EarningsContainer = ({ type, sources, setSources }) => {
       <TitleBar type={type} />
 
       <div className="container">
-        {sources.map(source => {
+        {expenses.map(expense => {
           return <BudgetPiece
-                  key={source.id}
+                  key={expense.id}
                   type={type}
-                  source={source}
-                  sources={sources}
-                  setSources={setSources}
+                  expense={expense}
+                  expenses={expenses}
+                  setExpenses={setExpenses}
                 />
         })}
-        <button onClick={addSource}><FaPlus /></button>
+        <button onClick={addExpense}><FaPlus /></button>
       </div>
     </div>
   );
