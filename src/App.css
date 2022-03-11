@@ -1,6 +1,6 @@
 :root {
   --text-color: rgb(58, 58, 58);
-  --desc-color: rgb(58, 58, 58);
+  --desc-color: rgb(118, 118, 118);
   --primary: #E3DE8F;
   --secondary: #D9D375;
   --tertiary: #D5B942;
@@ -70,7 +70,7 @@ h1:after {
   vertical-align: middle;
   line-height: 0;
   background-color: var(--tertiary);
-  color: rgb(58, 58, 58);
+  color: var(--text-color);
   transition-duration: 0.25s;
   border-radius: 15%;
   border-width: 0;
@@ -87,7 +87,7 @@ h1:after {
   background-color: var(--primary);
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
-  color: rgb(58, 58, 58);
+  color: var(--text-color);
 }
 
 .income-source .inputs {
