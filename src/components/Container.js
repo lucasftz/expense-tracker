@@ -9,7 +9,7 @@ const EarningsContainer = ({ type }) => {
   const [expenses, setExpenses] = useState([]);
 
   const addExpense = () => {
-    setExpenses([...expenses, {desc: "", value: 0, id: new Date().getTime()}]);
+    setExpenses([...expenses, {desc: "", value: "", id: new Date().getTime()}]);
   };
 
   return (
