@@ -7,18 +7,10 @@ function App() {
   const [incomeSources, setIncomeSources] = useState([]);
   const [expenses, setExpenses] = useState([]);
 
-  const addIncomeSource = () => {
-    setIncomeSources([...incomeSources, {desc: "", value: 0, id: new Date().getTime()}]);
-  };
-
-  const addExpense = () => {
-    setExpenses([...expenses, {desc: "", value: 0, id: new Date().getTime()}]);
-  };
-
   return (
     <div className="App">
-      <Container type="income" addSource={addIncomeSource} sources={incomeSources} />
-      <Container type="expenses" addSource={addExpense} sources={expenses} />
+      <Container type="income" sources={incomeSources} setSources={setIncomeSources} />
+      <Container type="expenses" sources={expenses} setSources={setExpenses} />
     </div>
   );
 }
