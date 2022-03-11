@@ -1,6 +1,8 @@
 import React from 'react';
+// icons
+import { HiOutlineTrash } from 'react-icons/hi';
 
-const BudgetPiece = ({ type, expense, expenses, setExpenses }) => {
+const BudgetPiece = ({ type, expense, expenses, setExpenses, removeExpense }) => {
   const handleDescChange = (e) => {
     // get a copy of this expense
     const expenseCopy = {...expense};
@@ -40,6 +42,9 @@ const BudgetPiece = ({ type, expense, expenses, setExpenses }) => {
         placeholder="Description"
         value={expense.desc}
         onChange={handleDescChange} />
+      <button onClick={() => removeExpense(expense.id)}>
+        <HiOutlineTrash />
+      </button>
     </div>
   );
 };

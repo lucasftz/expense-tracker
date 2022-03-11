@@ -21,6 +21,10 @@ const EarningsContainer = ({ type, setTotal }) => {
     setExpenses([...expenses, {desc: "", value: "", id: new Date().getTime()}]);
   };
 
+  const removeExpense = (id) => {
+    setExpenses([...expenses].filter(expense => expense.id !== id));
+  };
+
   return (
     <div>
       <TitleBar type={type} />
@@ -33,6 +37,7 @@ const EarningsContainer = ({ type, setTotal }) => {
                   expense={expense}
                   expenses={expenses}
                   setExpenses={setExpenses}
+                  removeExpense={removeExpense}
                 />
         })}
         <button onClick={addExpense}><FaPlus /></button>
