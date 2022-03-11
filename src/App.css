@@ -26,3 +26,36 @@ h1:after {
   margin: 0 -55% 0 .5em;
   width: 70%;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #D9D375;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 2em;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 800px){
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container button {
+  margin: 0;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  vertical-align: middle;
+  line-height: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition-duration: 0.25s;
+  border-radius: 15%;
+  border-width: 0;
+  cursor: pointer;
+}
+.container button:hover {
+  background-color: #D5B942;
+}

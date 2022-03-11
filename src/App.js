@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 // components
-import TitleBar from './components/titlebar/TitleBar';
+import Container from './components/Container';
 
 function App() {
   return (
     <div className="App">
-      <TitleBar />
+      <Container />
     </div>
   );
 }
