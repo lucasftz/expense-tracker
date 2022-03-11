@@ -15,6 +15,15 @@ const EarningsContainer = ({ type, sources, setSources }) => {
       <TitleBar type={type} />
 
       <div className="container">
+        {sources.map(source => {
+          return <BudgetPiece
+                  key={source.id}
+                  type={type}
+                  source={source}
+                  sources={sources}
+                  setSources={setSources}
+                />
+        })}
         <button onClick={addSource}><FaPlus /></button>
       </div>
     </div>
