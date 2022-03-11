@@ -73,7 +73,8 @@ h1:after {
   color: rgb(58, 58, 58);
 }
 
-.income-source input.expense, .expenses-source input.expense {
+.income-source input.expense, .expenses-source input.expense,
+.income-source input.expense::placeholder, .expenses-source input.expense::placeholder {
   color: rgb(58, 58, 58);
   font-size: 32px;
 }
