@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+// contexts
+import { currencyContext } from '../contexts/CurrencyContext';
 // componenets
 import TitleBar from './titlebar/TitleBar';
 import Expense from './Expense';
@@ -7,12 +9,13 @@ import { FaPlus } from 'react-icons/fa';
 
 const EarningsContainer = ({ type, setTotal }) => {
   const [expenses, setExpenses] = useState([]);
+  const {currency} = useContext(currencyContext);
 
   useEffect(() => {
     let sum = 0;
     expenses.forEach(expense => {
       // sum the expenses
-      sum += +expense.value.substring(1);
+      sum += +expense.value.substring(currency.length);
     });
     setTotal(sum);
   }, [expenses]);
