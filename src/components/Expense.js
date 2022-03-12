@@ -39,7 +39,7 @@ const Expense = ({ type, expense, expenses, setExpenses, removeExpense }) => {
     <div className={`${type}-source`}>
       <div className="inputs">
         <input
-          placeholder="$0"
+          placeholder={`${currency}0`}
           value={expense.value}
           onChange={handleValueChange}
           className="expense" />

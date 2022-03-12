@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import getSymbolFromCurrency from 'currency-symbol-map'
 import currencyData from '../currencyData';
+// contexts
+import { currencyContext } from '../contexts/CurrencyContext';
 
 const CurrencySelector = ({ setShowModal }) => {
   const [lookup, setLookup] = useState('');
+  const {setCurrency} = useContext(currencyContext);
 
-  const switchCurrency = (e) => {
-    console.log(e.target.value);
+  const switchCurrency = (currency) => {
+    const newCurrency = getSymbolFromCurrency(currencyData[currency]);
+    setCurrency(newCurrency);
   };
 
   return (
@@ -21,7 +25,7 @@ const CurrencySelector = ({ setShowModal }) => {
             getSymbolFromCurrency(currencyData[currency])!==undefined &&
             <button
               key={Object.keys(currencyData).indexOf(currency)}
-              onClick={switchCurrency}
+              onClick={() => switchCurrency(currency)}
             >
               {getSymbolFromCurrency(currencyData[currency])}
             </button>
