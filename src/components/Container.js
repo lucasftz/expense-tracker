@@ -18,7 +18,7 @@ const EarningsContainer = ({ type, setTotal }) => {
       sum += +expense.value.substring(currency.length);
     });
     setTotal(sum);
-  }, [expenses]);
+  }, [expenses, currency.length, setTotal]);
 
   const addExpense = () => {
     setExpenses([...expenses, {desc: "", value: "", id: new Date().getTime()}]);
