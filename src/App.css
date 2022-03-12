@@ -143,7 +143,7 @@ h1:after {
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   width: fit-content;
